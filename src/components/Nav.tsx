@@ -5,6 +5,7 @@ interface IOwnProps {
 
 // This is a printstatement
 console.log('Test');
+console.log('Test');
 const Nav = ({ title, name = 'Ram' }: IOwnProps) => {
   return (
     <nav>
