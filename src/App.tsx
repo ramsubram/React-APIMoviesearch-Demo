@@ -15,7 +15,7 @@ export interface IPost {
 
 const App = () => {
   //Variables and methods
-  const [posts, setPosts] = useState<IPost[]>([]);
+  let [posts, setPosts] = useState<IPost[]>([]);
   const [post, setPost] = useState<IPost>();
   const [search, setSearch] = useState<string>('');
   const [reverse, setReverse] = useState<boolean>(false);
@@ -24,6 +24,7 @@ const App = () => {
     //Question mark is checking if search is zero return false
     // if (search !== undefined && search !== null && search.length >= 4)
     // if(search && search.length >=4)
+    setPosts((posts = []));
     if (search?.length >= 4) {
       axios
         .get(`http://www.omdbapi.com/?s=${search}&apikey=15372cdf`)
