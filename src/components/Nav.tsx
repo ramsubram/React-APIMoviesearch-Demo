@@ -3,6 +3,8 @@ interface IOwnProps {
   name?: string;
 }
 
+// This is a printstatement
+console.log('Test');
 const Nav = ({ title, name = 'Ram' }: IOwnProps) => {
   return (
     <nav>
