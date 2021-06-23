@@ -6,6 +6,8 @@ interface propsContent {
   onClick: Function;
 }
 
+// This is a test
+
 const Contents = ({ contents, onSort, onClick }: propsContent) => {
   const renderItem = (item: IPost) => {
     return (
