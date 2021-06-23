@@ -38,6 +38,8 @@ const Showmore = ({ content, close }: showProps) => {
   return (
     <div className="popup">
       <div className="popup-inner">
+        <img src={content.Poster} alt="" />
+
         <p>
           <b>Title: </b>
           {details.Title}
