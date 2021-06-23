@@ -15,5 +15,5 @@ const Search = ({ value, onChange }: searchProps) => {
     />
   );
 };
-
+console.log('test');
 export default Search;

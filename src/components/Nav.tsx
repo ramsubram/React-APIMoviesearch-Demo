@@ -6,6 +6,8 @@ interface IOwnProps {
 // This is a printstatement
 console.log('Test');
 console.log('Test');
+// New pull from CMD
+console.log('test');
 const Nav = ({ title, name = 'Ram' }: IOwnProps) => {
   return (
     <nav>
