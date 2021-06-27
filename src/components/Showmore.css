@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
   display: flex;
@@ -13,7 +13,7 @@
 .popup-inner {
   position: relative;
   width: 70vh;
-  height: 40vh;
+  height: 60vh;
   background-color: white;
   text-align: left;
   padding: 80px;
