@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { IPost } from '../App';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Details from './Details';
 
 interface showProps {
   content?: IPost;
@@ -75,7 +76,13 @@ const Showmore = ({ content, close }: showProps) => {
       <div css={popup_inner}>
         <img className="image" src={content.Poster} alt="" />
 
-        <p>
+        <Details title="Title" content={details.Title} />
+        <Details title="Year" content={details.Year} />
+        <Details title="Year" content={details.Year} />
+        <Details title="Year" content={details.Year} />
+        <Details title="Year" content={details.Year} />
+
+        {/* <p>
           <b>Title: </b>
           {details.Title}
         </p>
@@ -93,7 +100,7 @@ const Showmore = ({ content, close }: showProps) => {
         </p>
         <p>
           <b>Plot:</b> {details.Plot}
-        </p>
+        </p> */}
 
         <button onClick={() => close()} css={button}>
           Close

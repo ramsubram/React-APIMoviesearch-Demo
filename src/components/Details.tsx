@@ -1,13 +1,17 @@
+import { css } from '@emotion/react';
+
 interface IProp {
   title: string;
-  content: string;
+  content: string | number;
 }
 
-const info = ({ title, content = '' }: IProp) => {
+const table = css``;
+
+const info = ({ title, content }: IProp) => {
   return (
     <div>
-      <p>{title}</p>
-      <p>{content}</p>)
+      <b>{title}:</b>
+      <div>{content}</div>
     </div>
   );
 };
