@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
 interface IOwnProps {
   title: string | boolean | Array<string>;
   name?: string;
@@ -9,9 +12,23 @@ console.log('Test');
 // New pull from CMD
 console.log('test');
 const Nav = ({ title, name = 'Ram' }: IOwnProps) => {
+  const nav = css`
+    padding: 20px;
+    text-align: center;
+    background-color: grey;
+  `;
+
+  const nav_a = css`
+    list-style-type: none;
+    color: white;
+    margin: 12px;
+    padding: 2px;
+    text-decoration: none;
+  `;
+
   return (
-    <nav>
-      <a href="" className="title">
+    <nav css={nav}>
+      <a css={nav_a} href="" className="title">
         <b>Movie DataBase</b>
       </a>
       {/* <a href="">Home</a>

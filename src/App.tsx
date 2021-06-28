@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import Nav from './components/Nav';
 import Contents from './components/Contents';
 import { useState, useEffect } from 'react';
@@ -61,8 +63,36 @@ const App = () => {
     setPost(undefined);
   };
 
+  const body = css`
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
+
+    nav {
+      padding: 20px;
+      text-align: center;
+      background-color: grey;
+    }
+
+    nav a {
+      list-style-type: none;
+      color: white;
+      margin: 12px;
+      padding: 2px;
+      text-decoration: none;
+    }
+  `;
+
   return (
-    <div className="App">
+    <div css={body} className="App">
       <header className="App-header"></header>
       <Nav title={['string', 'string2']} />
       <Search value={search} onChange={setSearch} />

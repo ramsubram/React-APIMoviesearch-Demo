@@ -1,8 +1,10 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import { IPost } from '../App';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import './Showmore.css';
+// import './Showmore.css';
 
 interface showProps {
   content?: IPost;
@@ -34,10 +36,44 @@ const Showmore = ({ content, close }: showProps) => {
   }, [content]);
   if (!content) return null;
   if (!details) return null;
+  const popup = css`
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+
+  const popup_inner = css`
+    position: relative;
+    width: 70vh;
+    height: 60vh;
+    background-color: white;
+    text-align: left;
+    padding: 80px;
+  `;
+
+  const button = css`
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    align-content: right;
+  `;
 
   return (
-    <div className="popup">
-      <div className="popup-inner">
+    <div css={popup}>
+      <div css={popup_inner}>
         <img className="image" src={content.Poster} alt="" />
 
         <p>
@@ -60,7 +96,7 @@ const Showmore = ({ content, close }: showProps) => {
           <b>Plot:</b> {details.Plot}
         </p>
 
-        <button onClick={() => close()} className="close-cutton">
+        <button onClick={() => close()} css={button}>
           Close
         </button>
       </div>
