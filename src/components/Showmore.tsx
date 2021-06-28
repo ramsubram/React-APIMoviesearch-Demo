@@ -77,9 +77,9 @@ const Showmore = ({ content, close }: showProps) => {
         <img className="image" src={content.Poster} alt="" />
 
         <Details title="Title" content={details.Title} />
-        <Details title="Year" content={details.Year} />
-        <Details title="Year" content={details.Year} />
-        <Details title="Year" content={details.Year} />
+        <Details title="Actors" content={details.Actors} />
+        <Details title="Plot" content={details.Plot} />
+        <Details title="Genre" content={details.Genre} />
         <Details title="Year" content={details.Year} />
 
         {/* <p>
