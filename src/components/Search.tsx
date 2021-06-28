@@ -18,7 +18,7 @@ const Search = ({ value, onChange }: searchProps) => {
   return (
     <input
       css={input}
-      type="search"
+      type="text"
       name="search-form"
       placeholder="Search for a movie..."
       value={value}
