@@ -4,12 +4,11 @@ import { IPost } from '../App';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// import './Showmore.css';
-
 interface showProps {
   content?: IPost;
   close: Function;
 }
+
 interface showDetails {
   details: string;
   Title: string;
