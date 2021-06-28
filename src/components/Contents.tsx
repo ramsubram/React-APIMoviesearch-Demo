@@ -27,6 +27,10 @@ const Contents = ({ contents, onSort, onClick }: propsContent) => {
     padding: 5px;
   `;
 
+  if (!Array.isArray(contents) || contents.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       <table css={table}>

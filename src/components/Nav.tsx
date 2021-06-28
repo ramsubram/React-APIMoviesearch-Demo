@@ -11,7 +11,7 @@ console.log('Test');
 console.log('Test');
 // New pull from CMD
 console.log('test');
-const Nav = ({ title, name = 'Ram' }: IOwnProps) => {
+const Nav = ({ title, name }: IOwnProps) => {
   const nav = css`
     padding: 20px;
     text-align: center;
