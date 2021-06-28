@@ -12,38 +12,12 @@ code {
     monospace;
 }
 
-nav {
-  padding: 20px;
-  text-align: center;
-  background-color: grey;
-}
-
-nav a {
-  list-style-type: none;
-  color: white;
-  margin: 12px;
-  padding: 2px;
-  text-decoration: none;
-}
-
 .title {
-  text-align: left;
-}
-
-input {
-  margin: 35px;
-  padding: 20px;
-  width: 50rem;
   text-align: left;
 }
 
 .item {
   margin: 5px;
-}
-
-table {
-  width: 100%;
-  padding: 20px;
 }
 
 .header {

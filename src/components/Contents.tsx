@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
 import { IPost } from '../App';
 
 interface propsContent {
@@ -19,9 +22,14 @@ const Contents = ({ contents, onSort, onClick }: propsContent) => {
     );
   };
 
+  const table = css`
+    width: 100%;
+    padding: 5px;
+  `;
+
   return (
     <div>
-      <table>
+      <table css={table}>
         <tr>
           <th onClick={() => onSort('Poster')} className="header">
             Poster

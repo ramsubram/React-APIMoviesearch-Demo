@@ -75,20 +75,6 @@ const App = () => {
       font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
     }
-
-    nav {
-      padding: 20px;
-      text-align: center;
-      background-color: grey;
-    }
-
-    nav a {
-      list-style-type: none;
-      color: white;
-      margin: 12px;
-      padding: 2px;
-      text-decoration: none;
-    }
   `;
 
   return (
