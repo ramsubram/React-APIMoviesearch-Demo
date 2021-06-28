@@ -10,8 +10,10 @@ const table = css``;
 const info = ({ title, content }: IProp) => {
   return (
     <div>
-      <b>{title}:</b>
-      <div>{content}</div>
+      <p>
+        <b>{title}:</b>
+        <div>{content}</div>
+      </p>
     </div>
   );
 };
