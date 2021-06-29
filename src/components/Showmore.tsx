@@ -37,7 +37,6 @@ const Showmore = ({ content, close }: showProps) => {
   if (!content) return null;
   if (!details) return null;
   const popup = css`
-    position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
@@ -46,18 +45,21 @@ const Showmore = ({ content, close }: showProps) => {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
   `;
 
   const popup_inner = css`
-    position: relative;
     width: 70vh;
-    height: 60vh;
+    height: 70vh;
     background-color: white;
     text-align: left;
     padding: 80px;
+    position: relative;
   `;
 
   const button = css`
+    top: 5px;
+    right: 5px;
     background-color: red; /* Green */
     border: none;
     color: white;
@@ -69,6 +71,7 @@ const Showmore = ({ content, close }: showProps) => {
     margin: 4px 2px;
     cursor: pointer;
     align-content: right;
+    position: absolute;
   `;
 
   return (
@@ -106,8 +109,6 @@ const Showmore = ({ content, close }: showProps) => {
           Close
         </button>
       </div>
-
-      <p></p>
     </div>
   );
 };

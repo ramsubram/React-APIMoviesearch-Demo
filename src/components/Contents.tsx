@@ -9,10 +9,27 @@ interface propsContent {
   onClick: Function;
 }
 
+const table = css`
+  width: 100%;
+  padding: 20px;
+  border-spacing: 0px;
+`;
+
+const tableRow = css`
+  &:hover {
+    background-color: #d5d5d3;
+  }
+`;
+
 const Contents = ({ contents, onSort, onClick }: propsContent) => {
   const renderItem = (item: IPost) => {
     return (
-      <tr onClick={() => onClick(item)} className="item" key={item.imdbID}>
+      <tr
+        css={tableRow}
+        onClick={() => onClick(item)}
+        className="item"
+        key={item.imdbID}
+      >
         <td>
           <img src={item.Poster} alt="" />
         </td>
@@ -21,11 +38,6 @@ const Contents = ({ contents, onSort, onClick }: propsContent) => {
       </tr>
     );
   };
-
-  const table = css`
-    width: 100%;
-    padding: 5px;
-  `;
 
   if (!Array.isArray(contents) || contents.length === 0) {
     return null;
