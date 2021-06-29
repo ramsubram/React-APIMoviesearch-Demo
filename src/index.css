@@ -16,10 +16,6 @@ code {
   text-align: left;
 }
 
-.item {
-  margin: 5px;
-}
-
 .header {
   text-align: left;
   cursor: pointer;
@@ -29,9 +25,5 @@ code {
 }
 
 img {
-  width: 60px;
-}
-
-.image {
-  width: 100px;
+  width: 30px;
 }

@@ -12,8 +12,12 @@ interface propsContent {
 
 const table = css`
   width: 100%;
-  padding: 20px;
+  font-size: 12px;
   border-spacing: 0px;
+`;
+
+const head = css`
+  height: 40px;
 `;
 
 const Contents = ({ contents, onSort, onClick, selected }: propsContent) => {
@@ -26,13 +30,13 @@ const Contents = ({ contents, onSort, onClick, selected }: propsContent) => {
     `;
     return (
       <tr
-        css={tableRow}
+        css={[tableRow, head]}
         onClick={() => onClick(item)}
         className="item"
         key={item.imdbID}
       >
         <td>
-          <img src={item.Poster} alt="" />
+          <img alt="" src={item.Poster} />
         </td>
         <td>{item.Title}</td>
         <td>{item.Year}</td>

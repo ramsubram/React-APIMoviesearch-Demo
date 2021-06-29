@@ -53,7 +53,7 @@ const Showmore = ({ content, close }: showProps) => {
     height: 70vh;
     background-color: white;
     text-align: left;
-    padding: 80px;
+    padding: 40px;
     position: relative;
   `;
 
