@@ -37,6 +37,13 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   }, [content]);
   if (!content) return null;
   if (!details) return null;
+
+  setTimeout(() => {
+    const el = document.getElementById('showmore-container');
+    console.log('Tittel: ', el);
+    el?.focus();
+  }, 10);
+
   const popup = css`
     top: 0;
     width: 100%;
@@ -56,6 +63,9 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
     text-align: left;
     padding: 40px;
     position: relative;
+    &:focus {
+      outline: none;
+    }
   `;
 
   const button = css`
@@ -75,10 +85,20 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
     position: absolute;
   `;
 
+  const image = css`
+    height: 250px;
+    width: 250px;
+  `;
+
   return (
-    <div onKeyDown={onKeyDown} css={popup}>
-      <div css={popup_inner}>
-        <img className="image" src={content.Poster} alt="" />
+    <div css={popup}>
+      <div
+        id="showmore-container"
+        tabIndex={0}
+        onKeyDown={onKeyDown}
+        css={popup_inner}
+      >
+        <img css={image} src={content.Poster} alt="" />
 
         <Details title="Title" content={details.Title} />
         <Details title="Actors" content={details.Actors} />

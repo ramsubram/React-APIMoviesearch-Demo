@@ -60,13 +60,13 @@ const App = () => {
     setPost(item);
   };
 
-  const close = (e: any) => {
+  const close = () => {
     setPost(undefined);
   };
 
   const esc = (e: any) => {
-    if ((e.keyCode = 27)) {
-      setPost(undefined);
+    if (e.keyCode === 27) {
+      close();
     }
   };
 
@@ -104,7 +104,7 @@ const App = () => {
   `;
 
   return (
-    <div css={body} className="App">
+    <div onKeyDown={esc} css={body} className="App">
       <header className="App-header"></header>
       <Nav title={['string', 'string2']} />
       <Search value={search} onChange={setSearch} onKeyDown={onKeyDown} />
