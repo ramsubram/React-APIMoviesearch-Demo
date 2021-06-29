@@ -7,6 +7,7 @@ interface propsContent {
   contents: IPost[];
   onSort: any;
   onClick: Function;
+  selected: number;
 }
 
 const table = css`
@@ -15,14 +16,14 @@ const table = css`
   border-spacing: 0px;
 `;
 
-const tableRow = css`
-  &:hover {
-    background-color: #d5d5d3;
-  }
-`;
-
-const Contents = ({ contents, onSort, onClick }: propsContent) => {
-  const renderItem = (item: IPost) => {
+const Contents = ({ contents, onSort, onClick, selected }: propsContent) => {
+  const renderItem = (item: IPost, index: number) => {
+    const tableRow = css`
+      ${index === selected ? 'background-color: #d5d5d3;' : null}
+      &:hover {
+        background-color: #d5d5d3;
+      }
+    `;
     return (
       <tr
         css={tableRow}
@@ -58,7 +59,9 @@ const Contents = ({ contents, onSort, onClick }: propsContent) => {
           </th>
         </tr>
         {/* If there is content map the items */}
-        {contents?.map((content: any) => renderItem(content))}
+        {contents?.map((content: any, index: number) =>
+          renderItem(content, index)
+        )}
       </table>
     </div>
   );

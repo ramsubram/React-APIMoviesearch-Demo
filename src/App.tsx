@@ -21,6 +21,7 @@ const App = () => {
   const [post, setPost] = useState<IPost>();
   const [search, setSearch] = useState<string>('');
   const [reverse, setReverse] = useState<boolean>(false);
+  const [select, setSelect] = useState<number>(0);
 
   useEffect(() => {
     //Question mark is checking if search is zero return false
@@ -66,7 +67,19 @@ const App = () => {
   const onKeyDown = (e: any) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      setPost(posts[0]);
+      setPost(posts[select]);
+    }
+    if (e.keyCode === 40) {
+      if (select < posts.length) {
+        setSelect(select + 1);
+        console.log('Down', select);
+      }
+    } else if (e.keyCode === 38) {
+      if (select >= 0) {
+        setSelect(select - 1);
+      }
+
+      console.log('Up', select);
     }
   };
 
@@ -89,7 +102,12 @@ const App = () => {
       <header className="App-header"></header>
       <Nav title={['string', 'string2']} />
       <Search value={search} onChange={setSearch} onKeyDown={onKeyDown} />
-      <Contents onClick={onClick} onSort={onSort} contents={posts} />
+      <Contents
+        onClick={onClick}
+        onSort={onSort}
+        contents={posts}
+        selected={select}
+      />
       <Showmore close={close} content={post} />
 
       {/* {JSON.stringify(posts)} */}
