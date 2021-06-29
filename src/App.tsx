@@ -63,6 +63,13 @@ const App = () => {
     setPost(undefined);
   };
 
+  const onKeyDown = (e: any) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      setPost(posts[0]);
+    }
+  };
+
   const body = css`
     margin: 0px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -81,7 +88,7 @@ const App = () => {
     <div css={body} className="App">
       <header className="App-header"></header>
       <Nav title={['string', 'string2']} />
-      <Search value={search} onChange={setSearch} />
+      <Search value={search} onChange={setSearch} onKeyDown={onKeyDown} />
       <Contents onClick={onClick} onSort={onSort} contents={posts} />
       <Showmore close={close} content={post} />
 

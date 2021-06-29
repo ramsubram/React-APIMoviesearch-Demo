@@ -5,6 +5,7 @@ interface searchProps {
   value?: string;
 
   onChange: (value: string) => void;
+  onKeyDown: (value: any) => void;
 }
 
 const input = css`
@@ -14,7 +15,7 @@ const input = css`
   text-align: left;
 `;
 
-const Search = ({ value, onChange }: searchProps) => {
+const Search = ({ value, onChange, onKeyDown }: searchProps) => {
   return (
     <input
       css={input}
@@ -23,6 +24,7 @@ const Search = ({ value, onChange }: searchProps) => {
       placeholder="Search for a movie..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
+      onKeyDown={onKeyDown}
     />
   );
 };
