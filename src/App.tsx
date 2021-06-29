@@ -60,8 +60,14 @@ const App = () => {
     setPost(item);
   };
 
-  const close = () => {
+  const close = (e: any) => {
     setPost(undefined);
+  };
+
+  const esc = (e: any) => {
+    if ((e.keyCode = 27)) {
+      setPost(undefined);
+    }
   };
 
   const onKeyDown = (e: any) => {
@@ -108,7 +114,7 @@ const App = () => {
         contents={posts}
         selected={select}
       />
-      <Showmore close={close} content={post} />
+      <Showmore close={close} content={post} onKeyDown={esc} />
 
       {/* {JSON.stringify(posts)} */}
     </div>

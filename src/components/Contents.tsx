@@ -36,7 +36,7 @@ const Contents = ({ contents, onSort, onClick, selected }: propsContent) => {
         key={item.imdbID}
       >
         <td>
-          <img alt="" src={item.Poster} />
+          <img alt="No Image" src={item.Poster} />
         </td>
         <td>{item.Title}</td>
         <td>{item.Year}</td>

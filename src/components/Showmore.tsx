@@ -8,6 +8,7 @@ import Details from './Details';
 interface showProps {
   content?: IPost;
   close: Function;
+  onKeyDown: (value: any) => void;
 }
 
 interface showDetails {
@@ -20,7 +21,7 @@ interface showDetails {
   Rated: string;
 }
 
-const Showmore = ({ content, close }: showProps) => {
+const Showmore = ({ content, close, onKeyDown }: showProps) => {
   const [details, setDetails] = useState<showDetails>();
 
   useEffect(() => {
@@ -75,7 +76,7 @@ const Showmore = ({ content, close }: showProps) => {
   `;
 
   return (
-    <div css={popup}>
+    <div onKeyDown={onKeyDown} css={popup}>
       <div css={popup_inner}>
         <img className="image" src={content.Poster} alt="" />
 
