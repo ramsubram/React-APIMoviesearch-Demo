@@ -9,6 +9,7 @@ interface showProps {
   content?: IPost;
   close: Function;
   onKeyDown: (value: any) => void;
+  onClick: (value: any) => void;
 }
 
 interface showDetails {
@@ -21,7 +22,7 @@ interface showDetails {
   Rated: string;
 }
 
-const Showmore = ({ content, close, onKeyDown }: showProps) => {
+const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
   const [details, setDetails] = useState<showDetails>();
 
   useEffect(() => {
@@ -91,7 +92,7 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   `;
 
   return (
-    <div css={popup}>
+    <div css={popup} onClick={() => close()}>
       <div
         id="showmore-container"
         tabIndex={0}
@@ -106,7 +107,7 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
         <Details title="Genre" content={details.Genre} />
         <Details title="Year" content={details.Year} />
 
-        {/* <p>
+        {/* <p>Œ
           <b>Title: </b>
           {details.Title}
         </p>

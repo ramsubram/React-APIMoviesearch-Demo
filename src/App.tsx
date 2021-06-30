@@ -70,6 +70,10 @@ const App = () => {
     }
   };
 
+  const clickExit = () => {
+    close();
+  };
+
   const onKeyDown = (e: any) => {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -114,7 +118,12 @@ const App = () => {
         contents={posts}
         selected={select}
       />
-      <Showmore close={close} content={post} onKeyDown={esc} />
+      <Showmore
+        onClick={clickExit}
+        close={close}
+        content={post}
+        onKeyDown={esc}
+      />
 
       {/* {JSON.stringify(posts)} */}
     </div>
