@@ -6,8 +6,8 @@ import { IPost } from '../App';
 interface propsContent {
   contents: IPost[];
   onSort: any;
-  onClick: Function;
   selected: number;
+  onClick: Function;
   setSelected: Function;
 }
 
