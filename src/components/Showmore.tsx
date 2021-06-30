@@ -107,7 +107,7 @@ const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
         <Details title="Genre" content={details.Genre} />
         <Details title="Year" content={details.Year} />
 
-        {/* <p>Œ
+        {/* <p>
           <b>Title: </b>
           {details.Title}
         </p>

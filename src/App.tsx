@@ -23,6 +23,20 @@ const App = () => {
   const [reverse, setReverse] = useState<boolean>(false);
   const [select, setSelect] = useState<number>(0);
 
+  const body = css`
+    margin: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
+  `;
+
   useEffect(() => {
     //Question mark is checking if search is zero return false
     // if (search !== undefined && search !== null && search.length >= 4)
@@ -93,26 +107,13 @@ const App = () => {
     }
   };
 
-  const body = css`
-    margin: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    code {
-      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-    }
-  `;
-
   return (
     <div onKeyDown={esc} css={body} className="App">
       <header className="App-header"></header>
       <Nav title={['string', 'string2']} />
       <Search value={search} onChange={setSearch} onKeyDown={onKeyDown} />
       <Contents
+        setSelected={setSelect}
         onClick={onClick}
         onSort={onSort}
         contents={posts}

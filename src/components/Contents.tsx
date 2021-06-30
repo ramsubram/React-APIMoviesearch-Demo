@@ -8,6 +8,7 @@ interface propsContent {
   onSort: any;
   onClick: Function;
   selected: number;
+  setSelected: Function;
 }
 
 const table = css`
@@ -20,18 +21,23 @@ const head = css`
   height: 40px;
 `;
 
-const Contents = ({ contents, onSort, onClick, selected }: propsContent) => {
+const Contents = ({
+  contents,
+  onSort,
+  onClick,
+  selected,
+  setSelected,
+}: propsContent) => {
   const renderItem = (item: IPost, index: number) => {
     const tableRow = css`
       ${index === selected ? 'background-color: #d5d5d3;' : null}
-      &:hover {
-        background-color: #d5d5d3;
-      }
     `;
     return (
       <tr
         css={[tableRow, head]}
         onClick={() => onClick(item)}
+        onMouseEnter={() => setSelected(index)}
+        onMouseLeave={() => setSelected(-1)}
         className="item"
         key={item.imdbID}
       >
