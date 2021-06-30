@@ -14,6 +14,7 @@ console.log('test');
 const Nav = ({ title, name }: IOwnProps) => {
   const nav = css`
     padding: 20px;
+    width: 100%;
     text-align: center;
     background-color: grey;
   `;
