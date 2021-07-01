@@ -43,7 +43,7 @@ const Contents = ({
         key={item.imdbID}
       >
         <td>
-          <img alt="No Image" src={item.Poster} />
+          <img className="image" alt="No Image" src={item.Poster} />
         </td>
         <td>{item.Title}</td>
         <td>{item.Year}</td>

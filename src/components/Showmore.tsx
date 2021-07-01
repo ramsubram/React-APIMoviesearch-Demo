@@ -58,6 +58,8 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   `;
 
   const popup_inner = css`
+    padding: 1px;
+    box-shadow: 5px 10px;
     overflow: auto;
     width: 70vh;
     height: 70vh;
@@ -88,8 +90,8 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   `;
 
   const image = css`
-    height: 250px;
-    width: 250px;
+    height: 246px;
+    width: 346;
   `;
 
   return (

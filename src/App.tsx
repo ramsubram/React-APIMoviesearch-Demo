@@ -119,12 +119,7 @@ const App = () => {
         contents={posts}
         selected={select}
       />
-      <Showmore
-        onClick={clickExit}
-        close={close}
-        content={post}
-        onKeyDown={esc}
-      />
+      <Showmore close={close} content={post} onKeyDown={esc} />
 
       {/* {JSON.stringify(posts)} */}
     </div>
