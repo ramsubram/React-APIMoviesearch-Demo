@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { IPost } from '../App';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Details from './Details';
 import { Skeleton } from '@material-ui/lab';
@@ -25,6 +25,11 @@ interface showDetails {
 
 const Showmore = ({ content, close, onKeyDown }: showProps) => {
   const [details, setDetails] = useState<showDetails>();
+  const domeNode: any = useRef();
+
+  useEffect(() => {
+    document.addEventListener('mousedown', () => {});
+  });
 
   useEffect(() => {
     if (content) {
@@ -90,12 +95,12 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   `;
 
   const image = css`
-    height: 246px;
-    width: 346;
+    height: 346px;
+    width: 246px;
   `;
 
   return (
-    <div css={popup}>
+    <div ref={domeNode} onClick={} css={popup}>
       <div
         onBlur={() => close()}
         id="showmore-container"
@@ -106,7 +111,7 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
         {details ? (
           <img css={image} src={details?.Poster || ''} alt="" />
         ) : (
-          <Skeleton variant="rect" width={250} height={250} />
+          <Skeleton variant="rect" width={246} height={346} />
         )}
 
         <Details title="Title" content={details?.Title} />
