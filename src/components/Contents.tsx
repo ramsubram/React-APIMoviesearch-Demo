@@ -12,9 +12,11 @@ interface propsContent {
 }
 
 const table = css`
-  width: 100%;
+  width: 90%;
   font-size: 12px;
   border-spacing: 0px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const head = css`

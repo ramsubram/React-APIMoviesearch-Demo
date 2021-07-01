@@ -58,6 +58,7 @@ const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
   `;
 
   const popup_inner = css`
+    overflow: auto;
     width: 70vh;
     height: 70vh;
     background-color: white;
@@ -92,8 +93,9 @@ const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
   `;
 
   return (
-    <div css={popup} onClick={() => close()}>
+    <div css={popup}>
       <div
+        onBlur={() => close()}
         id="showmore-container"
         tabIndex={0}
         onKeyDown={onKeyDown}
