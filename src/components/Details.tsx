@@ -1,6 +1,8 @@
+import { Skeleton } from '@material-ui/lab';
+
 interface IProp {
   title: string;
-  content: string | number;
+  content?: string | number;
 }
 
 const info = ({ title, content }: IProp) => {
@@ -8,7 +10,13 @@ const info = ({ title, content }: IProp) => {
     <div>
       <p>
         <b>{title}:</b>
-        <div>{content}</div>
+        <div>
+          {content ? (
+            content
+          ) : (
+            <Skeleton variant="text" width={210} height={40} />
+          )}
+        </div>
       </p>
     </div>
   );

@@ -4,12 +4,12 @@ import { IPost } from '../App';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Details from './Details';
+import { Skeleton } from '@material-ui/lab';
 
 interface showProps {
   content?: IPost;
   close: Function;
   onKeyDown: (value: any) => void;
-  onClick: (value: any) => void;
 }
 
 interface showDetails {
@@ -20,9 +20,10 @@ interface showDetails {
   Actors: string;
   Genre: string;
   Rated: string;
+  Poster: string;
 }
 
-const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
+const Showmore = ({ content, close, onKeyDown }: showProps) => {
   const [details, setDetails] = useState<showDetails>();
 
   useEffect(() => {
@@ -37,7 +38,6 @@ const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
     }
   }, [content]);
   if (!content) return null;
-  if (!details) return null;
 
   setTimeout(() => {
     const el = document.getElementById('showmore-container');
@@ -101,13 +101,17 @@ const Showmore = ({ content, close, onKeyDown, onClick }: showProps) => {
         onKeyDown={onKeyDown}
         css={popup_inner}
       >
-        <img css={image} src={content.Poster} alt="" />
+        {details ? (
+          <img css={image} src={details?.Poster || ''} alt="" />
+        ) : (
+          <Skeleton variant="rect" width={250} height={250} />
+        )}
 
-        <Details title="Title" content={details.Title} />
-        <Details title="Actors" content={details.Actors} />
-        <Details title="Plot" content={details.Plot} />
-        <Details title="Genre" content={details.Genre} />
-        <Details title="Year" content={details.Year} />
+        <Details title="Title" content={details?.Title} />
+        <Details title="Actors" content={details?.Actors} />
+        <Details title="Plot" content={details?.Plot} />
+        <Details title="Genre" content={details?.Genre} />
+        <Details title="Year" content={details?.Year} />
 
         {/* <p>
           <b>Title: </b>
