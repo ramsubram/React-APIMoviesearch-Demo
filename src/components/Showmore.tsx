@@ -99,10 +99,18 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
     width: 246px;
   `;
 
+  const closeOuter = (e: any) => {
+    // console.log(e.target);
+    // console.log(domeNode);
+    if (!domeNode.current.contains(e.target)) {
+      close();
+    }
+  };
+
   return (
-    <div ref={domeNode} onClick={} css={popup}>
+    <div onMouseDown={(e) => closeOuter(e)} css={popup}>
       <div
-        onBlur={() => close()}
+        ref={domeNode}
         id="showmore-container"
         tabIndex={0}
         onKeyDown={onKeyDown}
