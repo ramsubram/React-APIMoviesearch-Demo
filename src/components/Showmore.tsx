@@ -28,10 +28,6 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   const domeNode: any = useRef();
 
   useEffect(() => {
-    document.addEventListener('mousedown', () => {});
-  });
-
-  useEffect(() => {
     if (content) {
       axios
         .get(`http://www.omdbapi.com/?i=${content?.imdbID}&apikey=15372cdf`)
