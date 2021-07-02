@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 
 interface IOwnProps {
-  title: string | boolean | Array<string>;
+  title?: string | boolean | Array<string>;
   name?: string;
 }
 
@@ -11,12 +11,13 @@ console.log('Test');
 console.log('Test');
 // New pull from CMD
 console.log('test');
-const Nav = ({ title, name }: IOwnProps) => {
+const Nav = () => {
   const nav = css`
-    padding: 20px;
+    padding: 20px 0;
     width: 100%;
     text-align: center;
     background-color: grey;
+    overflow: hidden;
   `;
 
   const nav_a = css`

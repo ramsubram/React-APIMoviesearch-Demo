@@ -9,10 +9,11 @@ interface searchProps {
 }
 
 const input = css`
-  margin: 35px;
+  margin: 30px;
   padding: 20px;
-  width: 50rem;
-  text-align: left;
+  height: 2px;
+  width: calc(80% - 35px - 20px);
+  font-size: 14px;
 `;
 
 const div = css`

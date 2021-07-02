@@ -58,7 +58,6 @@ const App = () => {
     //Question mark is checking if search is zero return false
     // if (search !== undefined && search !== null && search.length >= 4)
     // if(search && search.length >=4)
-
     bounce();
   }, [search]);
 
@@ -121,7 +120,7 @@ const App = () => {
   return (
     <div onKeyDown={esc} css={body} className="App">
       <header className="App-header"></header>
-      <Nav title={['string', 'string2']} />
+      <Nav />
       <Search value={search} onChange={setSearch} onKeyDown={onKeyDown} />
       <Contents
         setSelected={setSelect}
