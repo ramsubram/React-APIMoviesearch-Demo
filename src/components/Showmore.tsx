@@ -60,7 +60,7 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
 
   const popup_inner = css`
     padding: 1px;
-    box-shadow: 5px 10px;
+    box-shadow: 6px 12px 8px #888888;
     overflow: auto;
     width: 70vh;
     height: 70vh;
@@ -70,6 +70,10 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
     position: relative;
     &:focus {
       outline: none;
+    }
+    @media screen and (max-width: 800px) {
+      width: 90vh;
+      height: 90vh;
     }
   `;
 
@@ -88,11 +92,21 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
     cursor: pointer;
     align-content: right;
     position: absolute;
+
+    @media screen and (max-width: 800px) {
+      position: fixed;
+    }
   `;
 
   const image = css`
     height: 346px;
     width: 246px;
+
+    @media screen and (max-width: 800px) {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   `;
 
   const closeOuter = (e: any) => {

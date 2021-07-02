@@ -11,15 +11,18 @@ interface propsContent {
 }
 
 const table = css`
+  .header {
+    font-size: 16px;
+  }
   width: 90%;
-  font-size: 12px;
   border-spacing: 0px;
   margin-left: auto;
   margin-right: auto;
 `;
 
 const head = css`
-  height: 40px;
+  height: 30px;
+  padding: 20px;
 `;
 
 const Contents = ({
