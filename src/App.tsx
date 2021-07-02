@@ -22,6 +22,7 @@ const App = () => {
   const [search, setSearch] = useState<string>('');
   const [reverse, setReverse] = useState<boolean>(false);
   const [select, setSelect] = useState<number>(0);
+  const [debounce, setDebounce] = useState<any>();
 
   const body = css`
     margin: 0px;
@@ -37,18 +38,28 @@ const App = () => {
     }
   `;
 
+  const bounce = () => {
+    if (debounce) clearTimeout(debounce);
+    const time = setTimeout(() => {
+      setPosts((posts = []));
+      if (search?.length >= 4) {
+        axios
+          .get(`http://www.omdbapi.com/?s=${search}&apikey=15372cdf`)
+          .then((response) => {
+            setPosts(response.data.Search);
+          });
+      }
+    }, 300);
+
+    setDebounce(time);
+  };
+
   useEffect(() => {
     //Question mark is checking if search is zero return false
     // if (search !== undefined && search !== null && search.length >= 4)
     // if(search && search.length >=4)
-    setPosts((posts = []));
-    if (search?.length >= 4) {
-      axios
-        .get(`http://www.omdbapi.com/?s=${search}&apikey=15372cdf`)
-        .then((response) => {
-          setPosts(response.data.Search);
-        });
-    }
+
+    bounce();
   }, [search]);
 
   const onSort = (field: string) => {
