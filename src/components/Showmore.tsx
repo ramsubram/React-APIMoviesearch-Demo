@@ -99,8 +99,8 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
   `;
 
   const image = css`
-    height: 346px;
-    width: 246px;
+    max-width: 200px;
+    width: 100%;
 
     @media screen and (max-width: 800px) {
       display: block;
