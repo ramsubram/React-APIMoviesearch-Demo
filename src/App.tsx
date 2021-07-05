@@ -88,9 +88,12 @@ const App = () => {
     setPost(undefined);
   };
 
+  //Key for escape
   const esc = (e: any) => {
+    const input = document.getElementById('input');
     if (e.keyCode === 27) {
       close();
+      input?.focus();
     }
   };
 
@@ -98,16 +101,21 @@ const App = () => {
     close();
   };
 
+  // Key for enter
   const onKeyDown = (e: any) => {
     if (e.keyCode === 13) {
       e.preventDefault();
       setPost(posts[select]);
     }
+
+    // Key down
     if (e.keyCode === 40) {
       if (select < posts.length) {
         setSelect(select + 1);
         console.log('Down', select);
       }
+
+      // Key up
     } else if (e.keyCode === 38) {
       if (select >= 0) {
         setSelect(select - 1);

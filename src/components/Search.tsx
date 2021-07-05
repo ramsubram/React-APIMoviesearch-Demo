@@ -24,6 +24,7 @@ const Search = ({ value, onChange, onKeyDown }: searchProps) => {
   return (
     <div css={div}>
       <input
+        id="input"
         css={input}
         type="text"
         name="search-form"
