@@ -97,10 +97,6 @@ const App = () => {
     }
   };
 
-  const clickExit = () => {
-    close();
-  };
-
   // Key for enter
   const onKeyDown = (e: any) => {
     if (e.keyCode === 13) {
