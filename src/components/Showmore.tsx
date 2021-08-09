@@ -117,6 +117,13 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
     }
   };
 
+  const ls = [
+    { title: 'title', content: details?.Title },
+    { title: 'Actors', content: details?.Actors },
+    { title: 'Plot', content: details?.Plot },
+    { title: 'Genre', content: details?.Genre },
+    { title: 'Year', content: details?.Year },
+  ];
   return (
     <div onMouseDown={(e) => closeOuter(e)} css={popup}>
       <div
@@ -132,31 +139,9 @@ const Showmore = ({ content, close, onKeyDown }: showProps) => {
           <Skeleton variant="rect" width={246} height={346} />
         )}
 
-        <Details title="Title" content={details?.Title} />
-        <Details title="Actors" content={details?.Actors} />
-        <Details title="Plot" content={details?.Plot} />
-        <Details title="Genre" content={details?.Genre} />
-        <Details title="Year" content={details?.Year} />
-
-        {/* <p>
-          <b>Title: </b>
-          {details.Title}
-        </p>
-        <p>
-          <b>Year:</b> {details.Year}
-        </p>
-        <p>
-          <b>Rated:</b> {details.Rated}
-        </p>
-        <p>
-          <b>Actors:</b> {details.Actors}
-        </p>
-        <p>
-          <b>Genre:</b> {details.Genre}
-        </p>
-        <p>
-          <b>Plot:</b> {details.Plot}
-        </p> */}
+        {ls.map((x, i) => (
+          <Details key={i} title={x.title} content={x.content} />
+        ))}
 
         <button onClick={() => close()} css={button}>
           Close
